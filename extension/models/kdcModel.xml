@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="kdc:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>KDC Content Model</description>
+    <author>Yoshihiko Aochi</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco Data List Model Definitions -->
+        <import uri="http://www.alfresco.org/model/datalist/1.0"   prefix="dl" />
+    </imports>
+
+    <!-- Custom namespace for the ACME company Data Lists-->
+    <namespaces>
+        <namespace uri="http://www.kyoceradocumentsolutions.co.jp/model/content/1.0" prefix="kdc"/>
+    </namespaces>
+
+    <types>
+        <!--
+            Data List Item Type for Item Master
+            -->
+        <type name="kdc:_softwareCategory">
+          <title>Software Category</title>
+          <parent>dl:dataListItem</parent>
+          <properties>
+            <property name="kdc:category">
+              <type>d:text</type>
+              <mandatory>true</mandatory>
+            </property>
+            <property name="kdc:description">
+              <type>d:text</type>
+            </property>
+          </properties>
+        </type>
+        
+        <type name="kdc:itemMaster">
+            <title>Item Master</title>
+            <parent>dl:dataListItem</parent>
+            <properties>
+                <property name="kdc:itemText">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="kdc:fwCdRomCategory">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="kdc:softwareCategory">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="kdc:relVersionFormOfficial">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <property name="kdc:relVersionFormTest">
+                    <type>d:text</type>
+                </property>
+                <property name="kdc:itemCode">
+                    <type>d:text</type>
+                </property>
+                <property name="kdc:paramSheetUrl">
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </type>
+    </types>
+</model>
